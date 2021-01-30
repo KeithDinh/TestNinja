@@ -1,4 +1,8 @@
-﻿using NUnit.Framework;
+﻿// The number below indicates the order of learning this project
+// 1
+
+using System.Linq;
+using NUnit.Framework;
 using TestNinja.Fundamentals;
 
 
@@ -52,5 +56,22 @@ namespace TestNinja.UnitTests
         //     
         //     Assert.That(result,Is.EqualTo(1));
         // }
+        [Test]
+        public void GetOddNumbers_LimitIsGreaterThanZero_ReturnOddNumbersUpToLimit()
+        {
+            var result = _math.GetOddNumbers(5);
+            
+            // Assert.That(result, Is.Not.Empty);
+            // Assert.That(result.Count(), Is.EqualTo(3));
+            //
+            // Assert.That(result, Is.EqualTo(1));
+            // Assert.That(result, Is.EqualTo(3));
+            // Assert.That(result, Is.EqualTo(5));
+            
+            Assert.That(result, Is.EquivalentTo(new [] {1 ,3 ,5}));
+             
+            // Assert.That(result ,Is.Ordered); // in order
+            // Assert.That(result ,Is.Unique); // no duplicates
+        }
     }
 }
